@@ -1,4 +1,4 @@
-![](https://github.com/tomekzbrozek/c3po/blob/master/theme-picture.jpg)
+![](https://github.com/tomekzbrozek/c3po/blob/master/theme-picture.png)
 
 C3PO uses [IEX Trading](https://iextrading.com/developer/) data to collect historical prices of stocks traded on NYSE and NASDAQ on a regular basis and save in AWS S3.
 
