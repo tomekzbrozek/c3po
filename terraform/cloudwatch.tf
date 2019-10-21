@@ -31,3 +31,17 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
   role       = "${aws_iam_role.iex_api_lambda_role.name}"
   policy_arn = "${aws_iam_policy.lambda_logging.arn}"
 }
+
+resource "aws_cloudwatch_event_rule" "iex_api_lambda_trigger" {
+  name                = "IEX-API-Lambda-trigger"
+  description         = "Download IEX API Last data"
+  schedule_expression = "cron(0 4 * * ? *)"
+}
+
+resource "aws_cloudwatch_event_target" "iex_api_lambda_trigger" {
+  rule = "${aws_cloudwatch_event_rule.iex_api_lambda_trigger.name}"
+  arn  = "${aws_lambda_function.iex_api_lambda.arn}"
+
+  input = <<EOF
+EOF
+}

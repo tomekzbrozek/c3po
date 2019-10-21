@@ -3,8 +3,9 @@ C3PO uses [IEX Trading](https://iextrading.com/developer/) data to collect histo
 # To Do:
 
 * add a step that removes all packages from `lambda/` before downloading packages
-* increase runtime to 10s
+* add cloudwatch schedule
 * add logging
+* deploy a service on AWS Batch or EC2 that runs historical data population for IEX API (https://medium.com/better-programming/cron-job-patterns-in-aws-126fbf54a276)
 
 # Arch / to read:
 

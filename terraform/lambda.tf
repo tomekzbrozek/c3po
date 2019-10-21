@@ -1,12 +1,10 @@
 resource "aws_lambda_function" "iex_api_lambda" {
   function_name = "IexApiLast"
-
   handler = "iex_api_last.handler"
   runtime = "python3.7"
-
   role = "${var.TOMEK_AWS_ARN}"
-
   filename = "iex_api_last.zip"
+  timeout = 10
 }
 
 # IAM role which dictates what other AWS services the Lambda function
