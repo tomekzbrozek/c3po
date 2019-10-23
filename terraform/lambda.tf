@@ -5,6 +5,13 @@ resource "aws_lambda_function" "iex_api_lambda" {
   role = "${var.TOMEK_AWS_ARN}"
   filename = "iex_api_last.zip"
   timeout = 10
+  environment {
+    variables = {
+      TOMEK_AWS_ACCESS_KEY_ID = "${var.TOMEK_AWS_ACCESS_KEY_ID}"
+      TOMEK_AWS_SECRET_ACCESS_KEY = "${var.TOMEK_AWS_SECRET_ACCESS_KEY}"
+    }
+}
+
 }
 
 # IAM role which dictates what other AWS services the Lambda function

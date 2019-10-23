@@ -8,8 +8,8 @@ def handler(event, context):
 
     s3_resource = boto3.resource(
         's3',
-        aws_access_key_id=os.environ['TF_VAR_TOMEK_AWS_ACCESS_KEY_ID'],
-        aws_secret_access_key=os.environ['TF_VAR_TOMEK_AWS_SECRET_ACCESS_KEY']
+        aws_access_key_id=os.environ['TOMEK_AWS_ACCESS_KEY_ID'],
+        aws_secret_access_key=os.environ['TOMEK_AWS_SECRET_ACCESS_KEY']
     )
 
     def last():

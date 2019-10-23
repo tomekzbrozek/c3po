@@ -16,8 +16,9 @@ zip-lambdas:
 	#zip -r -j terraform/iex_api_last.zip lambda/iex_api_last.py
 
 tf-apply:
-	make zip-lambdas \
-	&& cd terraform \
+	#make zip-lambdas \
+	##&& 
+	cd terraform \
 	&& terraform apply
 
 tf-destroy:
@@ -26,7 +27,7 @@ tf-destroy:
 
 deploy-app:
 	#make zip-lambdas \
-	##&& 
+	##&&
 	make tf-destroy \
 	&& make tf-apply
 
