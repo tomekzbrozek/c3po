@@ -32,14 +32,14 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
   policy_arn = "${aws_iam_policy.lambda_logging.arn}"
 }
 
-resource "aws_cloudwatch_event_rule" "iex_api_lambda_trigger" {
+resource "aws_cloudwatch_event_rule" "trigger" {
   name                = "IEX-API-Lambda-trigger"
   description         = "Download IEX API Last data"
   schedule_expression = "cron(0 4 * * ? *)"
 }
 
 resource "aws_cloudwatch_event_target" "iex_api_lambda_trigger" {
-  rule = "${aws_cloudwatch_event_rule.iex_api_lambda_trigger.name}"
+  rule = "${aws_cloudwatch_event_rule.trigger.name}"
   target_id = "iex_api_lambda"
   arn  = "${aws_lambda_function.iex_api_lambda.arn}"
 
@@ -47,10 +47,10 @@ resource "aws_cloudwatch_event_target" "iex_api_lambda_trigger" {
 EOF
 }
 
-resource "aws_lambda_permission" "allow_cloudwatch_to_call_lambda" {
+resource "aws_lambda_permission" "allow_cloudwatch_to_call_iex_api_lambda" {
     statement_id = "AllowExecutionFromCloudWatch"
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.iex_api_lambda.function_name}"
     principal = "events.amazonaws.com"
-    source_arn = "${aws_cloudwatch_event_rule.iex_api_lambda_trigger.arn}"
+    source_arn = "${aws_cloudwatch_event_rule.trigger.arn}"
 }

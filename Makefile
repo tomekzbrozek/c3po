@@ -25,8 +25,9 @@ tf-destroy:
 	&& terraform destroy
 
 deploy-app:
-	make zip-lambdas \
-	&& make tf-destroy \
+	#make zip-lambdas \
+	##&& 
+	make tf-destroy \
 	&& make tf-apply
 
 install-dependencies:

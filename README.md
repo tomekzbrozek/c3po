@@ -2,6 +2,7 @@ C3PO uses [IEX Trading](https://iextrading.com/developer/) data to collect histo
 
 # To Do:
 
+* zip with: https://github.com/hashicorp/terraform/issues/19080?
 * add a step that removes all packages from `lambda/` before downloading packages
 * remove the step that installs dependencies from deploy-app
 * add cloudwatch schedule (why scheduled triggering it not firing?!)
