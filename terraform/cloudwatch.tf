@@ -40,6 +40,7 @@ resource "aws_cloudwatch_event_rule" "iex_api_lambda_trigger" {
 
 resource "aws_cloudwatch_event_target" "iex_api_lambda_trigger" {
   rule = "${aws_cloudwatch_event_rule.iex_api_lambda_trigger.name}"
+  target_id = "iex_api_lambda"
   arn  = "${aws_lambda_function.iex_api_lambda.arn}"
 
   input = <<EOF
