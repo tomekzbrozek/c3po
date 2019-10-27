@@ -7,9 +7,7 @@ C3PO uses [IEX Trading](https://iextrading.com/developer/) data to collect histo
 https://blog.quiltdata.com/an-easier-way-to-build-lambda-deployment-packages-with-docker-instead-of-ec2-9050cd486ba8
 https://www.reddit.com/r/aws/comments/93jhgi/how_can_i_add_third_party_python_dependencies_to/
 * add a step that removes all packages from `lambda/` before downloading packages
-* remove the step that installs dependencies from deploy-app
-* add cloudwatch schedule (why scheduled triggering it not firing?!)
-* add logging
+* add logging http://nathanielobrown.com/blog/posts/quick_and_dirty_python_logging_lesson.html
 * deploy a service on AWS Batch or EC2 that runs historical data population for IEX API (https://medium.com/better-programming/cron-job-patterns-in-aws-126fbf54a276)
 
 # Arch / to read:
