@@ -5,6 +5,10 @@ def handler(event, context):
     import boto3
     import os
     import uuid
+    import logging
+
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
 
     s3_resource = boto3.resource(
         's3',
@@ -27,4 +31,8 @@ def handler(event, context):
             Body=(bytes(json.dumps(result).encode('UTF-8')))
         )
 
-    last()
+        return(s3_object_name)
+
+    logger.info('Getting last prices from IEX Trading API...')
+    s3_object_name = last()
+    logger.info('Success! Last prices loaded to s3://iex-trading/' + s3_object_name)
