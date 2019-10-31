@@ -9,6 +9,7 @@ resource "aws_lambda_function" "iex_api_lambda" {
     variables = {
       TOMEK_AWS_ACCESS_KEY_ID = "${var.TOMEK_AWS_ACCESS_KEY_ID}"
       TOMEK_AWS_SECRET_ACCESS_KEY = "${var.TOMEK_AWS_SECRET_ACCESS_KEY}"
+      IEX_TOKEN = "${var.IEX_TOKEN}"
     }
 }
 

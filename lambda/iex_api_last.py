@@ -17,7 +17,7 @@ def handler(event, context):
     )
 
     def last():
-        request_url = 'https://api.iextrading.com/1.0/tops/last'
+        request_url = 'https://cloud.iexapis.com/v1/tops/last?token=' + os.environ['IEX_TOKEN']
         response = requests.get(request_url)
 
         if response.status_code != 200:

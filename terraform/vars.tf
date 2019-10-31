@@ -11,3 +11,6 @@ variable "TOMEK_AWS_SECRET_ACCESS_KEY" {
 variable "TOMEK_AWS_ARN" {
   type = "string"
 }
+variable "IEX_TOKEN" {
+  type = "string"
+}
