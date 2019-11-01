@@ -1,7 +1,7 @@
 C3PO uses [IEX Trading](https://iextrading.com/developer/) data to collect historical prices of stocks traded on NYSE and NASDAQ on schedule and save in AWS S3.
 
 # To Do:
-1. add logging
+1. ship R2 as a repo
 2. deploy a service on EC2 that runs historical data population for IEX API
 3. set up Redshift cluster
 
